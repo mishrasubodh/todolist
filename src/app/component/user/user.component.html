@@ -1,0 +1,54 @@
+
+<div>
+
+
+<div class="row mt-1" style="height:80px;">
+  <div class="col-3 d-none col-md-3 d-md-block"></div>
+  <div class="col-12 col-md-6  d-flex  
+                 justify-content-center align-items-center  
+                 text-light h3 form-box">
+     <label>please Add todo</label>
+    <input [(ngModel)]="user.newTodo" type="text" class="col-7 form-control" style="width:300px;">
+    <label>please select todo</label>
+    <select name="selectedQuantity"  id="aantal" class="form-control" [(ngModel)]="user.status"
+      class="col-7 form-control" style="width:300px;">
+      <option *ngFor="let option of options" [value]="option">{{option}}</option>
+    </select>
+    <button class="btn btn-primary" [disabled]='!user.newTodo|| !user.status' (click)="addToList(user)"> ADD TASK</button>
+  
+  </div>
+
+  <div class="col-3 d-none col-md-3 d-md-block"></div>
+</div>
+
+<div>
+  <table class="table tblclass" >
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">id</th>
+        <th scope="col">todolist</th>
+        <th scope="col">status</th>
+        <th scope="col">edit</th>
+        <th scope="col">delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let todo of alreadyTodo;let i = index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{todo.id}}</td>
+        <td>{{todo.newTodo}}</td>
+        <td>{{todo.status}}</td>
+        <td><button class="btn btn-primary" type="button" (click)="edit(todo,i)">edit</button></td>
+        <td><button class="btn btn-danger" type="button">delete</button></td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+
+
+

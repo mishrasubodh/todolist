@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+  overflow-x: hidden;
+}
+.container {
+     padding: 20px;
+     position: relative;
+     padding-bottom: 100px;
+   }
+   
+   .mat-checkbox-layout {
+     display: inline !important;
+   }
+   
+   .label-header {
+     height: 13px;
+   }
+   
+   .box {
+     position: relative;
+   }
+   
+   .box-tip-shown .box-tips {
+     right: -20%;
+     margin-right:-20px;
+     padding-right: 0;
+   }
+
+   .red-snackbar{
+        background-color: red;
+        color: black;
+   }
+   .green-snackbar{
+     background-color: green;
+     color: black;
+}
