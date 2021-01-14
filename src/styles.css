@@ -1,6 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 body{
-  overflow-x: hidden;
+  overflow: hidden;
 }
 .container {
      padding: 20px;
@@ -34,3 +36,4 @@ body{
      background-color: green;
      color: black;
 }
+

@@ -1,54 +1,55 @@
-
 <div>
-
-
-<div class="row mt-1" style="height:80px;">
-  <div class="col-3 d-none col-md-3 d-md-block"></div>
-  <div class="col-12 col-md-6  d-flex  
-                 justify-content-center align-items-center  
-                 text-light h3 form-box">
-     <label>please Add todo</label>
-    <input [(ngModel)]="user.newTodo" type="text" class="col-7 form-control" style="width:300px;">
-    <label>please select todo</label>
-    <select name="selectedQuantity"  id="aantal" class="form-control" [(ngModel)]="user.status"
-      class="col-7 form-control" style="width:300px;">
-      <option *ngFor="let option of options" [value]="option">{{option}}</option>
-    </select>
-    <button class="btn btn-primary" [disabled]='!user.newTodo|| !user.status' (click)="addToList(user)"> ADD TASK</button>
-  
+  <div style="padding: 10px;">
+    <button type="button" class="btn btn-primary" (click)="goBack()">Back</button>
+    <button type="button" class="btn btn-info" (click)="logOut()" style="float: right;">LogOut</button>
   </div>
 
-  <div class="col-3 d-none col-md-3 d-md-block"></div>
+  <div class="row mt-1" style="height:80px;">
+    <div class="col-3 d-none col-md-3 d-md-block"></div>
+    <div class="col-12 col-md-6  d-flex  
+                 justify-content-center align-items-center  
+                 text-light h3 form-box">
+      <h2 style="text-align: center; margin-top: 0;">User Page </h2>
+      <label>please Add todo</label>
+      <input [(ngModel)]="user.newTodo" type="text" class="col-7 form-control" style="width:300px;">
+      <label>please select todo</label>
+      <select name="selectedQuantity" id="aantal" class="form-control" [(ngModel)]="user.status"
+        class="col-7 form-control" style="width:300px;">
+        <option *ngFor="let option of options" [value]="option">{{option}}</option>
+      </select>
+      <button class="btn btn-primary" *ngIf="editData" [disabled]='!user.newTodo|| !user.status'
+        (click)="addToList(user)">
+        UpDate Task </button>
+      <button class="btn btn-primary" *ngIf="!editData" [disabled]='!user.newTodo|| !user.status'
+        (click)="addToList(user)">
+        Add Task </button>
+    </div>
+
+    <div class="col-3 d-none col-md-3 d-md-block"></div>
+  </div>
+
+  <div class="table-section" *ngIf='alreadyTodo'>
+    <table class="table tblclass">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">id</th>
+          <th scope="col">todolist</th>
+          <th scope="col">status</th>
+          <th scope="col">edit</th>
+          <th scope="col">delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let todo of alreadyTodo;let i = index">
+          <th scope="row">{{i+1}}</th>
+          <td>{{todo.id}}</td>
+          <td>{{todo.newTodo}}</td>
+          <td>{{todo.status}}</td>
+          <td><button class="btn btn-primary" type="button" (click)="edit(todo,i)">edit</button></td>
+          <td><button class="btn btn-danger" type="button" (click)="delete(todo,i)">delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
-
-<div>
-  <table class="table tblclass" >
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">id</th>
-        <th scope="col">todolist</th>
-        <th scope="col">status</th>
-        <th scope="col">edit</th>
-        <th scope="col">delete</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let todo of alreadyTodo;let i = index">
-        <th scope="row">{{i+1}}</th>
-        <td>{{todo.id}}</td>
-        <td>{{todo.newTodo}}</td>
-        <td>{{todo.status}}</td>
-        <td><button class="btn btn-primary" type="button" (click)="edit(todo,i)">edit</button></td>
-        <td><button class="btn btn-danger" type="button">delete</button></td>
-      </tr>
-      
-    </tbody>
-  </table>
-</div>
-
-</div>
-
-
-
-

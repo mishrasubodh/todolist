@@ -1,12 +1,24 @@
-.login-content{
-     text-align: center;
-     margin-top:10%;
+.login-content {
+  text-align: center;
 }
-.login-content input{
-     width: 300px;
-     margin: auto;
+
+.login-content input {
+  width: 300px;
+  margin: auto;
 }
-.login-content label{
-     font-weight: 500;
-     text-transform: capitalize;
+
+.login-content label {
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.cnter {
+  width: 60%;
+  text-align: center;
+  margin: 2% auto;
+  background: #efefef;
+  padding: 20px;
+  /* width: 40%; */
+  border-radius: 10px;
+  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1), 0 10px 4px rgba(0, 0, 0, 0.1);
 }

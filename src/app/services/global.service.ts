@@ -30,7 +30,15 @@ export class GlobalService {
       }
       return item;
     });
-
     localStorage.setItem(`${username}`, JSON.stringify(sdata));
+  }
+
+  deletedata(username, index) {
+    var a = [];
+    a = JSON.parse(localStorage.getItem(`${username}`)) || [];
+    let forremoveData = a.filter((v, i) => {
+      return i != index;
+    });
+    localStorage.setItem(`${username}`, JSON.stringify(forremoveData));
   }
 }

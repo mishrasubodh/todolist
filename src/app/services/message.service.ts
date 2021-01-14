@@ -9,8 +9,8 @@ import {
   providedIn: 'root',
 })
 export class MessageService {
-  horizontalPosition: MatSnackBarHorizontalPosition = 'start';
-  verticalPosition: MatSnackBarVerticalPosition = 'bottom';
+  horizontalPosition: MatSnackBarHorizontalPosition = 'end';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
   constructor(private _snackBar: MatSnackBar) {}
 
   openSnackBar(message: string, action: boolean) {
